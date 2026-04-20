@@ -10,7 +10,8 @@ echo ""
 # Install system dependencies
 echo "[1/4] Installing system dependencies..."
 apt-get update -qq > /dev/null 2>&1
-apt-get install -y -qq build-essential transformers > /dev/null 2>&1
+PYTHON_DEV="python$(python3 -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')-dev"
+apt-get install -y -qq "$PYTHON_DEV" build-essential transformers > /dev/null 2>&1
 echo "✓ Dependencies installed"
 
 # Install vLLM globally
