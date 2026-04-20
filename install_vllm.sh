@@ -10,7 +10,7 @@ echo ""
 # Install system dependencies
 echo "[1/4] Installing system dependencies..."
 apt-get update -qq > /dev/null 2>&1
-apt-get install -y -qq build-essential > /dev/null 2>&1
+apt-get install -y -qq build-essential transformers > /dev/null 2>&1
 echo "✓ Dependencies installed"
 
 # Install vLLM globally
