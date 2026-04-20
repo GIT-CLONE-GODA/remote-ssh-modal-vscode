@@ -11,13 +11,14 @@ echo ""
 echo "[1/4] Installing system dependencies..."
 apt-get update -qq > /dev/null 2>&1
 PYTHON_DEV="python$(python3 -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')-dev"
-apt-get install -y -qq "$PYTHON_DEV" build-essential transformers > /dev/null 2>&1
+apt-get install -y -qq "$PYTHON_DEV" build-essential > /dev/null 2>&1
 echo "✓ Dependencies installed"
 
 # Install vLLM globally
 echo "[2/4] Installing vLLM..."
 pip install -q --upgrade pip > /dev/null 2>&1
 pip install -q vllm==0.17 > /dev/null 2>&1
+pip install --upgrade transformers > /dev/null 2>&1
 echo "✓ vLLM installed"
 
 # Fix CUDA environment
