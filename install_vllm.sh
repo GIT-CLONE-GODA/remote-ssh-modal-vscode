@@ -16,7 +16,7 @@ echo "✓ Dependencies installed"
 # Install vLLM globally
 echo "[2/4] Installing vLLM..."
 pip install -q --upgrade pip > /dev/null 2>&1
-pip install -q vllm > /dev/null 2>&1
+pip install -q vllm==0.17 > /dev/null 2>&1
 echo "✓ vLLM installed"
 
 # Fix CUDA environment
